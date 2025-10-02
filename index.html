@@ -1,161 +1,345 @@
 <!DOCTYPE html>
+<!-- This declares that the document is an HTML5 document -->
+
 <html lang="en">
+<!-- Sets the language of the document to English -->
+
 <head>
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Samiksha Gujar — Salesforce Administrator</title>
+   <!-- Adds a favicon/icon to your browser tab
+        Place a favicon.ico file in the same folder as this HTML file -->
+   
+   <meta charset="utf-8" />
+   <!-- Defines the character encoding for the document -->
+   
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <!-- Makes the site responsive on mobile devices -->
+   
+   <title>Samiksha Gujar — Salesforce Administrator</title>
+   <!-- The title that appears in browser tabs
+        CUSTOMIZE: Change if you want a different name -->
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Fonts & Icons -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <!-- Imports the Poppins font from Google Fonts in different weights -->
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Imports Font Awesome icons library for social icons and other visual elements -->
 
-  <meta name="description" content="Samiksha Gujar — Salesforce Administrator. Sales Cloud, Service Cloud, Flows, Data Management, Reports & Dashboards." />
+   <meta name="description" content="Samiksha Gujar — Salesforce Administrator. Sales Cloud, Service Cloud, Flows, Data Management, Reports & Dashboards." />
+   <!-- Description that appears in search engine results
+        CUSTOMIZE: Modify for better SEO -->
 
-  <style>
-    :root{
-      --primary:#063b6e;
-      --accent:#007bff;
-      --muted:#6c757d;
-      --bg:#f4f6f8;
-      --card:#fff;
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 10px 30px rgba(11,22,50,0.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg,var(--bg),#eef3f8);
-      color:#122028;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      font-size:16px;
-    }
+   <!-- CSS Styling begins here -->
+   <style>
+     /* CSS Variables 
+        CUSTOMIZE: You can change these colors to match your personal branding */
+     :root{
+       --primary:#063b6e;      /* Main dark blue color used for headers and important elements */
+       --accent:#007bff;       /* Accent color used for links, buttons, and highlights */
+       --muted:#6c757d;        /* Muted gray color used for secondary text */
+       --bg:#f4f6f8;           /* Light background color for the page */
+       --card:#fff;            /* White color used for cards and content blocks */
+       --glass: rgba(255,255,255,0.6);  /* Semi-transparent white for glass effects */
+       --shadow: 0 10px 30px rgba(11,22,50,0.08);  /* Standard shadow for cards and elements */
+     }
+     
+     /* Basic reset and global styles */
+     *{box-sizing:border-box}  
+     /* Makes sizing calculations include padding and borders */
+     
+     html{scroll-behavior:smooth}  
+     /* Enables smooth scrolling when clicking navigation links */
+     
+     body{
+       margin:0;  
+       /* Removes default body margin */
+       
+       font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;  
+       /* Sets font stack */
+       
+       background:linear-gradient(180deg,var(--bg),#eef3f8);  
+       /* Creates subtle gradient background */
+       
+       color:#122028;  
+       /* Sets default text color */
+       
+       -webkit-font-smoothing:antialiased;  
+       /* Improves font rendering on webkit browsers */
+       
+       -moz-osx-font-smoothing:grayscale;  
+       /* Improves font rendering on Firefox */
+       
+       line-height:1.5;  
+       /* Sets comfortable line spacing */
+       
+       font-size:16px;  
+       /* Sets base font size */
+     }
 
-    .container{max-width:1100px;margin:0 auto;padding:1.25rem}
+     /* Container to center content and add consistent padding */
+     .container{max-width:1100px;margin:0 auto;padding:1.25rem}
 
-    /* Header */
-    header.site-header{
-      background:var(--primary);
-      color:white;
-      position:sticky;
-      top:0;
-      z-index:40;
-      box-shadow:0 6px 20px rgba(6,59,110,0.12);
-    }
-    header .container{
-      display:flex;
-      gap:1rem;
-      align-items:center;
-      justify-content:space-between;
-      padding:0.9rem 1.25rem;
-    }
-    .brand{font-weight:700;font-size:1.15rem;letter-spacing:0.2px}
-    nav.main-nav ul{display:flex;gap:0.25rem;list-style:none;margin:0;padding:0}
-    nav.main-nav a{color:rgba(255,255,255,0.95);padding:0.5rem 0.9rem;border-radius:6px;text-decoration:none;display:inline-block}
-    nav.main-nav a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+     /* Header Styles */
+     header.site-header{
+       background:var(--primary);  
+       /* Dark blue background for the header */
+       
+       color:white;  
+       /* White text in header */
+       
+       position:sticky;  
+       /* Makes header stick to top when scrolling */
+       
+       top:0;  
+       /* Positions header at the top of the viewport */
+       
+       z-index:40;  
+       /* Ensures header stays on top of other elements */
+       
+       box-shadow:0 6px 20px rgba(6,59,110,0.12);  
+       /* Adds subtle shadow to header */
+     }
+     
+     /* Layout for header contents (logo and navigation) */
+     header .container{
+       display:flex;  
+       /* Uses flexbox layout */
+       
+       gap:1rem;  
+       /* Adds spacing between elements */
+       
+       align-items:center;  
+       /* Centers items vertically */
+       
+       justify-content:space-between;  
+       /* Pushes logo and nav to opposite ends */
+       
+       padding:0.9rem 1.25rem;  
+       /* Adds padding inside the header */
+     }
+     
+     /* Styling for the name/brand in the header
+        CUSTOMIZE: You can change text styles */
+     .brand{font-weight:700;font-size:1.15rem;letter-spacing:0.2px}
+     
+     /* Navigation menu styling */
+     nav.main-nav ul{display:flex;gap:0.25rem;list-style:none;margin:0;padding:0}  
+     /* Creates horizontal nav menu */
+     
+     nav.main-nav a{color:rgba(255,255,255,0.95);padding:0.5rem 0.9rem;border-radius:6px;text-decoration:none;display:inline-block}  
+     /* Styles nav links */
+     
+     nav.main-nav a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}  
+     /* Adds hover effect to nav links */
 
-    /* Hero */
-    .hero{
-      padding:3.25rem 0;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:2rem;
-      align-items:center;
-    }
-    .intro h1{font-size:2.1rem;margin:0 0 0.35rem;color:var(--primary)}
-    .intro p.lead{color:#243142;margin-bottom:1rem;font-size:1.05rem}
-    .meta-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem}
-    .chip{background:var(--card);padding:0.45rem 0.6rem;border-radius:999px;font-weight:600;color:var(--primary);box-shadow:var(--shadow);font-size:0.88rem}
+     /* Hero Section Styles */
+     .hero{
+       padding:3.25rem 0;  
+       /* Adds vertical padding to the hero section */
+     }
+     
+     /* Layout for hero section (intro text and profile card) */
+     .hero-grid{
+       display:grid;  
+       /* Uses CSS grid layout */
+       
+       grid-template-columns: 1fr 320px;  
+       /* Creates two columns - main content and profile card */
+       
+       gap:2rem;  
+       /* Adds spacing between columns */
+       
+       align-items:center;  
+       /* Vertically centers content */
+     }
+     
+     /* Heading styles in the intro area
+        CUSTOMIZE: You can adjust font sizes */
+     .intro h1{font-size:2.1rem;margin:0 0 0.35rem;color:var(--primary)}
+     
+     /* Subheading/lead text styles
+        CUSTOMIZE: You can modify this text in the HTML */
+     .intro p.lead{color:#243142;margin-bottom:1rem;font-size:1.05rem}
+     
+     /* Skills chips/tags in the hero section */
+     .meta-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem}  
+     /* Layout for the skills chips */
+     
+     .chip{background:var(--card);padding:0.45rem 0.6rem;border-radius:999px;font-weight:600;color:var(--primary);box-shadow:var(--shadow);font-size:0.88rem}  
+     /* Individual chip styling */
 
-    .hero-ctas{margin-top:1rem;display:flex;gap:0.6rem;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 0.9rem;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600;text-decoration:none;
-      box-shadow:0 8px 20px rgba(0,123,255,0.12)
-    }
-    .btn.secondary{background:transparent;border:1px solid rgba(15,76,146,0.08);color:var(--primary);font-weight:600}
+     /* Call-to-action buttons styling */
+     .hero-ctas{margin-top:1rem;display:flex;gap:0.6rem;flex-wrap:wrap}  
+     /* Layout for buttons */
+     
+     /* Main button style
+        CUSTOMIZE: You can change colors in the :root variables */
+     .btn{
+       display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 0.9rem;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600;text-decoration:none;
+       box-shadow:0 8px 20px rgba(0,123,255,0.12)
+     }
+     
+     /* Secondary button style */
+     .btn.secondary{background:transparent;border:1px solid rgba(15,76,146,0.08);color:var(--primary);font-weight:600}
 
-    /* Profile card/photo */
-    .profile-card{
-      display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82));
-      padding:1.15rem;border-radius:14px;box-shadow:var(--shadow);
-    }
-    .photo-frame{
-      width:190px;height:190px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 18px 40px rgba(6,59,110,0.12);display:block;
-      background:linear-gradient(135deg, rgba(0,123,255,0.06), rgba(6,59,110,0.04));
-    }
-    .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%; /* This centers horizontally and positions slightly higher vertically */
-    display: block;
-    filter: contrast(1.03) saturate(0.98) brightness(0.99);
-}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(0.98) brightness(0.99)}
-    .profile-name{font-weight:700;color:var(--primary)}
-    .profile-title{font-weight:600;color:var(--muted);font-size:0.92rem}
+     /* Profile Card and Photo Styles */
+     .profile-card{
+       display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;
+       background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82));  
+       /* Glass-like background effect */
+       
+       padding:1.15rem;border-radius:14px;box-shadow:var(--shadow);  
+       /* Adds padding, rounded corners, and shadow */
+     }
+     
+     /* Circular frame for the profile photo */
+     .photo-frame{
+       width:190px;height:190px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 18px 40px rgba(6,59,110,0.12);display:block;
+       background:linear-gradient(135deg, rgba(0,123,255,0.06), rgba(6,59,110,0.04));  
+       /* Subtle background if image fails to load */
+     }
+     
+     /* Styling for the profile image
+        IMPORTANT: This controls image positioning */
+     .photo-frame img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;  
+       /* Makes image cover the entire frame */
+       
+       object-position: center 30%;  
+       /* Centers horizontally and positions face vertically 
+          CUSTOMIZE: Adjust this value (20%-40%) to center your face */
+       
+       display: block;
+       filter: contrast(1.03) saturate(0.98) brightness(0.99);  
+       /* Subtle image enhancements */
+     }
+     
+     /* REMOVE THIS DUPLICATE: You have two .photo-frame img declarations - this one should be removed */
+     .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(0.98) brightness(0.99)}
+     
+     /* Name in the profile card
+        CUSTOMIZE: Edit the text in HTML */
+     .profile-name{font-weight:700;color:var(--primary)}
+     
+     /* Job title in the profile card
+        CUSTOMIZE: Edit the text in HTML */
+     .profile-title{font-weight:600;color:var(--muted);font-size:0.92rem}
 
-    /* Main sections */
-    main section{
-      padding:2.5rem 0;
-    }
-    h2.section-title{
-      text-align:center;font-size:1.6rem;margin-bottom:1rem;color:var(--primary)
-    }
-    .lead-center{max-width:880px;margin:0.5rem auto 0;color:#243142;text-align:center}
+     /* Main Content Section Styles */
+     main section{
+       padding:2.5rem 0;  
+       /* Adds vertical spacing between sections */
+     }
+     
+     /* Section title styling
+        CUSTOMIZE: Edit the titles in HTML */
+     h2.section-title{
+       text-align:center;font-size:1.6rem;margin-bottom:1rem;color:var(--primary)
+     }
+     
+     /* Center-aligned paragraph text */
+     .lead-center{max-width:880px;margin:0.5rem auto 0;color:#243142;text-align:center}
 
-    /* Experience / timeline */
-    .timeline{display:flex;flex-direction:column;gap:1rem;max-width:980px;margin:1.25rem auto}
-    .job{
-      background:var(--card);padding:1.15rem;border-radius:10px;box-shadow:var(--shadow);border-left:4px solid var(--primary)
-    }
-    .job .row{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap}
-    .job h3{margin:0;font-size:1.02rem}
-    .company{color:var(--accent);font-weight:600;margin-bottom:0.5rem}
-    .job ul{margin:0.65rem 0 0 1.1rem;padding:0}
-    .job li{margin-bottom:0.6rem;color:#213042}
+     /* Experience/Timeline Section Styles */
+     .timeline{display:flex;flex-direction:column;gap:1rem;max-width:980px;margin:1.25rem auto}  
+     /* Layout for job listings */
+     
+     /* Individual job card styling */
+     .job{
+       background:var(--card);padding:1.15rem;border-radius:10px;box-shadow:var(--shadow);border-left:4px solid var(--primary)
+     }
+     
+     /* Layout for job header with title and date */
+     .job .row{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap}
+     
+     /* Job title styling
+        CUSTOMIZE: Edit job titles in HTML */
+     .job h3{margin:0;font-size:1.02rem}
+     
+     /* Company name styling
+        CUSTOMIZE: Edit company names in HTML */
+     .company{color:var(--accent);font-weight:600;margin-bottom:0.5rem}
+     
+     /* Job bullet points list */
+     .job ul{margin:0.65rem 0 0 1.1rem;padding:0}
+     
+     /* Individual bullet point styling
+        CUSTOMIZE: Edit bullet points in HTML */
+     .job li{margin-bottom:0.6rem;color:#213042}
 
-    /* Projects */
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-    .project-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
-    .project-card h4{margin:0 0 0.5rem;color:var(--primary)}
+     /* Projects Section Styles */
+     .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}  
+     /* Responsive grid layout */
+     
+     /* Individual project card styling */
+     .project-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+     
+     /* Project title styling
+        CUSTOMIZE: Edit project titles in HTML */
+     .project-card h4{margin:0 0 0.5rem;color:var(--primary)}
 
-    /* Skills & tools chips */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-    .skill-box{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
-    .tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem}
-    .tool{background:#f1f6fc;padding:0.35rem 0.6rem;border-radius:999px;font-size:0.88rem;color:var(--primary);font-weight:600}
+     /* Skills Section Styles */
+     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}  
+     /* Responsive grid layout */
+     
+     /* Individual skill category box */
+     .skill-box{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+     
+     /* Tools/technologies tags layout */
+     .tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem}
+     
+     /* Individual tool/technology tag styling
+        CUSTOMIZE: Edit tools in HTML */
+     .tool{background:#f1f6fc;padding:0.35rem 0.6rem;border-radius:999px;font-size:0.88rem;color:var(--primary);font-weight:600}
 
-    /* Contact */
-    .contact-grid{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:1rem}
-    .contact-item{background:var(--card);padding:0.8rem 1rem;border-radius:10px;display:flex;align-items:center;gap:0.5rem;box-shadow:var(--shadow)}
-    .contact-item a{color:var(--primary);font-weight:600;text-decoration:none}
+     /* Contact Section Styles */
+     .contact-grid{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:1rem}  
+     /* Layout for contact items */
+     
+     /* Individual contact method styling (email, phone) */
+     .contact-item{background:var(--card);padding:0.8rem 1rem;border-radius:10px;display:flex;align-items:center;gap:0.5rem;box-shadow:var(--shadow)}
+     
+     /* Contact link styling
+        CUSTOMIZE: Update contact details in HTML */
+     .contact-item a{color:var(--primary);font-weight:600;text-decoration:none}
 
-    footer{padding:1.2rem 0;text-align:center;background:transparent;color:var(--muted);font-size:0.95rem;margin-top:2rem}
+     /* Footer Styling
+        CUSTOMIZE: Update copyright in HTML */
+     footer{padding:1.2rem 0;text-align:center;background:transparent;color:var(--muted);font-size:0.95rem;margin-top:2rem}
 
-    /* Responsive */
-    @media (max-width:920px){
-      .hero-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:740px){
-      nav.main-nav{display:none}
-      .hero-grid{grid-template-columns:1fr;gap:1rem}
-      .photo-frame{width:160px;height:160px}
-    }
-  </style>
+     /* Responsive Design Media Queries */
+     @media (max-width:920px){
+       .hero-grid{grid-template-columns:1fr 1fr}  
+       /* Makes profile card smaller on medium screens */
+     }
+     
+     @media (max-width:740px){
+       nav.main-nav{display:none}  
+       /* Hides navigation on mobile
+          POTENTIAL ENHANCEMENT: Add a mobile menu */
+       
+       .hero-grid{grid-template-columns:1fr;gap:1rem}  
+       /* Stacks hero content vertically */
+       
+       .photo-frame{width:160px;height:160px}  
+       /* Makes profile photo smaller on mobile */
+     }
+   </style>
 </head>
 
 <body>
+  <!-- Header and Navigation -->
   <header class="site-header" role="banner">
     <div class="container">
+      <!-- Site brand/logo
+           CUSTOMIZE: Change if you want a different name -->
       <div class="brand">Samiksha Gujar</div>
+      
+      <!-- Navigation menu
+           CUSTOMIZE: You can add or remove menu items -->
       <nav class="main-nav" role="navigation" aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
@@ -168,13 +352,21 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Section - Main introduction area -->
   <section class="hero">
     <div class="container hero-grid">
+      <!-- Introduction and primary content -->
       <div class="intro">
+        <!-- Main heading
+             CUSTOMIZE: Change if you want a different name -->
         <h1>Samiksha Gujar</h1>
+        
+        <!-- Tagline/lead paragraph
+             CUSTOMIZE: Edit to match your profile -->
         <p class="lead">Salesforce Administrator focused on Sales Cloud & Service Cloud, automation using Flows, and robust data integrity. I design secure, scalable Salesforce solutions that help teams work smarter — not harder.</p>
 
+        <!-- Skills/keyword chips
+             CUSTOMIZE: Edit to highlight your key skills -->
         <div class="meta-chips" aria-hidden="true">
           <div class="chip">Salesforce Admin</div>
           <div class="chip">Sales Cloud</div>
@@ -182,28 +374,48 @@
           <div class="chip">Reports & Dashboards</div>
         </div>
 
+        <!-- Call-to-action buttons -->
         <div class="hero-ctas">
-          <!-- If you add resume.pdf to the same folder, this will download it -->
-           
-          <a class="btn" href="Samiksha_SF_Admin_Sept_2025.pdf" download aria-label="Download resume (PDF)"><i class="fa-solid fa-download"></i> Download Resume</a>
+          <!-- Resume download button
+               CUSTOMIZE: Replace "resume.pdf" with your actual resume file name
+               For example: "Samiksha_SF_Admin_Sept_2025.pdf" -->
+          <a class="btn" href="resume.pdf" download aria-label="Download resume (PDF)"><i class="fa-solid fa-download"></i> Download Resume</a>
+          
+          <!-- Contact button - Links to contact section -->
           <a class="btn secondary" href="#contact" aria-label="Contact Samiksha"><i class="fa-solid fa-envelope"></i> Contact</a>
           
-           <!-- UPDATE: replace '#' with your LinkedIn and Trailhead URLs -->
-           
-          <a class="btn" href="https://www.linkedin.com/in/samikshag2020/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a class="btn" href="https://www.salesforce.com/trailblazer/samikshagujar2020" target="_blank" rel="noopener"><i class="fa-brands fa-salesforce"></i> Trailhead</a>
+          <!-- LinkedIn button
+               CUSTOMIZE: Replace "#" with your actual LinkedIn profile URL
+               Example: https://www.linkedin.com/in/your-profile-name -->
+          <a class="btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          
+          <!-- Trailhead button
+               CUSTOMIZE: Replace "#" with your actual Trailhead profile URL
+               Example: https://trailblazer.me/id/your-trailhead-id -->
+          <a class="btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-salesforce"></i> Trailhead</a>
         </div>
       </div>
 
+      <!-- Profile card with photo -->
       <aside class="profile-card" aria-labelledby="profile-name">
+        <!-- Photo frame
+             IMPORTANT: Place your photo in the same directory and name it "image.png" -->
         <div class="photo-frame" title="Profile photo">
-          <!-- Place the attached image in the same folder and name it exactly image.png -->
+          <!-- CUSTOMIZE: If you want to use a different image name or path, change "image.png" to your file path -->
           <img src="image.png" alt="Profile photo of Samiksha Gujar">
         </div>
+        
+        <!-- Name and title display -->
         <div>
+          <!-- CUSTOMIZE: Change if you want a different name -->
           <div id="profile-name" class="profile-name">Samiksha Gujar</div>
+          
+          <!-- CUSTOMIZE: Update with your current title and certifications -->
           <div class="profile-title">Salesforce Administrator — Certified Administrator</div>
         </div>
+        
+        <!-- Availability status
+             CUSTOMIZE: Edit or remove based on your job search status -->
         <div style="width:100%">
           <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
             <span style="font-size:0.88rem;color:var(--muted)">Open to opportunities</span>
@@ -214,22 +426,35 @@
   </section>
 
   <main>
-    <!-- ABOUT -->
+    <!-- About Section -->
     <section id="about" class="container">
       <h2 class="section-title">About</h2>
+      
+      <!-- About paragraph
+           CUSTOMIZE: Edit to reflect your background and specialties -->
       <p class="lead-center">I am a focused Salesforce Administrator with hands-on experience across Sales Cloud and Service Cloud implementations. I specialize in building flows and automation to reduce manual effort, designing reports and dashboards that provide clear operational visibility, and ensuring data governance across orgs. I collaborate closely with stakeholders and follow structured deployment practices (Change Sets / UAT) to deliver reliable, maintainable solutions.</p>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- Experience Section -->
     <section id="experience" class="container">
       <h2 class="section-title">Professional Experience</h2>
       <div class="timeline">
+        <!-- Job 1
+             CUSTOMIZE: Edit details for each position -->
         <article class="job" aria-labelledby="job1">
           <div class="row">
+            <!-- Job title and company - CUSTOMIZE -->
             <h3 id="job1">Salesforce Administrator — Kriit Technologies USA LLC (Client: Merchant Advance Funding)</h3>
+            
+            <!-- Job dates - CUSTOMIZE -->
             <div style="color:var(--muted);font-style:italic">May 2024 – Aug 2025</div>
           </div>
+          
+          <!-- Short job description - CUSTOMIZE -->
           <div class="company">Funding & underwriting workflow automation</div>
+          
+          <!-- Job responsibilities
+               CUSTOMIZE: Edit bullet points -->
           <ul>
             <li>Worked with stakeholders through Azure DevOps to triage enhancements, bug fixes and support tickets and translate requirements into Salesforce changes.</li>
             <li>Customized Lightning: objects, record types, page layouts and validation rules tailored for funding workflows.</li>
@@ -238,12 +463,22 @@
           </ul>
         </article>
 
+        <!-- Job 2
+             CUSTOMIZE: Edit details for each position -->
         <article class="job" aria-labelledby="job2">
           <div class="row">
+            <!-- Job title and company - CUSTOMIZE -->
             <h3 id="job2">Salesforce Administrator — Kinfotech (Client: Travel Management)</h3>
+            
+            <!-- Job dates - CUSTOMIZE -->
             <div style="color:var(--muted);font-style:italic">Dec 2023 – Apr 2024</div>
           </div>
+          
+          <!-- Short job description - CUSTOMIZE -->
           <div class="company">Payments & refunds automation</div>
+          
+          <!-- Job responsibilities
+               CUSTOMIZE: Edit bullet points -->
           <ul>
             <li>Designed and implemented a Create Refund feature integrated with a third‑party payment processor and duplicate-prevention logic.</li>
             <li>Developed guided Screen Flows to standardize refund processing and reduce manual errors.</li>
@@ -252,12 +487,22 @@
           </ul>
         </article>
 
+        <!-- Job 3
+             CUSTOMIZE: Edit details for each position -->
         <article class="job" aria-labelledby="job3">
           <div class="row">
+            <!-- Job title and company - CUSTOMIZE -->
             <h3 id="job3">Salesforce Administrator — Kinfotech (Client: Smart Home Appliances)</h3>
+            
+            <!-- Job dates - CUSTOMIZE -->
             <div style="color:var(--muted);font-style:italic">June 2023 – Dec 2023</div>
           </div>
+          
+          <!-- Short job description - CUSTOMIZE -->
           <div class="company">Service Cloud & Field Service setup</div>
+          
+          <!-- Job responsibilities
+               CUSTOMIZE: Edit bullet points -->
           <ul>
             <li>Implemented Service Cloud features for Case Management (Email‑to‑Case / Web‑to‑Case) to centralize support routing.</li>
             <li>Configured Asset and Entitlement Management to track warranties and service coverage.</li>
@@ -266,12 +511,22 @@
           </ul>
         </article>
 
+        <!-- Job 4
+             CUSTOMIZE: Edit details for each position -->
         <article class="job" aria-labelledby="job4">
           <div class="row">
+            <!-- Job title and company - CUSTOMIZE -->
             <h3 id="job4">Salesforce Administrator — Kinfotech (Client: UrbanNest Realty)</h3>
+            
+            <!-- Job dates - CUSTOMIZE -->
             <div style="color:var(--muted);font-style:italic">Aug 2022 – May 2023</div>
           </div>
+          
+          <!-- Short job description - CUSTOMIZE -->
           <div class="company">Real estate operations automation</div>
+          
+          <!-- Job responsibilities
+               CUSTOMIZE: Edit bullet points -->
           <ul>
             <li>Customized Salesforce to track Properties, Leases and Tenants with tailored objects and page layouts.</li>
             <li>Automated lease renewals, rent reminders and maintenance escalations using Flows to reduce manual follow-up.</li>
@@ -279,12 +534,22 @@
           </ul>
         </article>
 
+        <!-- Job 5
+             CUSTOMIZE: Edit details for each position -->
         <article class="job" aria-labelledby="job5">
           <div class="row">
+            <!-- Job title and company - CUSTOMIZE -->
             <h3 id="job5">Salesforce Administrator — Kinfotech (Client: The Pipeline Group)</h3>
+            
+            <!-- Job dates - CUSTOMIZE -->
             <div style="color:var(--muted);font-style:italic">Jul 2020 – Aug 2022</div>
           </div>
+          
+          <!-- Short job description - CUSTOMIZE -->
           <div class="company">Sales process & lead management</div>
+          
+          <!-- Job responsibilities
+               CUSTOMIZE: Edit bullet points -->
           <ul>
             <li>Supported CRM optimization focused on lead management and improving sales team productivity.</li>
             <li>Managed user access: roles, profiles and permission sets; created custom objects where needed.</li>
@@ -295,25 +560,33 @@
       </div>
     </section>
 
-    <!-- PROJECTS / HIGHLIGHTS -->
+    <!-- Projects Section -->
     <section id="projects" class="container">
       <h2 class="section-title">Projects & Highlights</h2>
       <div class="projects">
+        <!-- Project 1
+             CUSTOMIZE: Edit details for each project -->
         <div class="project-card">
           <h4>Refund Automation (Travel Management)</h4>
           <p>End‑to‑end solution including third‑party payment integration and guided Screen Flow to prevent duplicate refunds and reduce manual errors during customer refunds.</p>
         </div>
 
+        <!-- Project 2
+             CUSTOMIZE: Edit details for each project -->
         <div class="project-card">
           <h4>Service Cloud Implementation (Smart Home Appliances)</h4>
           <p>Designed case lifecycle, automated email capture, asset tracking and field service scheduling to improve service resolution and visibility for support teams.</p>
         </div>
 
+        <!-- Project 3
+             CUSTOMIZE: Edit details for each project -->
         <div class="project-card">
           <h4>Funding Workflow Optimization (MAF)</h4>
           <p>Customized Lightning architecture and reports for funding processes, implemented governance controls including permission sets and Enhanced Audit Trail validation.</p>
         </div>
 
+        <!-- Project 4
+             CUSTOMIZE: Edit details for each project -->
         <div class="project-card">
           <h4>Real Estate Operations Automation (UrbanNest)</h4>
           <p>Automated lease renewals and maintenance workflows using Flows and created dashboards to monitor occupancy and revenue trends.</p>
@@ -321,33 +594,45 @@
       </div>
     </section>
 
-    <!-- SKILLS & TOOLS -->
+    <!-- Skills & Tools Section -->
     <section id="skills" class="container">
       <h2 class="section-title">Core Competencies & Tools</h2>
       <div class="skills-grid" style="margin-top:1rem">
+        <!-- Skill Category 1
+             CUSTOMIZE: Edit categories and skills -->
         <div class="skill-box">
           <h4 style="margin-top:0;margin-bottom:0.5rem">Administration & Security</h4>
           <div>Profiles, Roles, Permission Sets, OWD, Sharing Rules, IP Restrictions, Enhanced Audit Trail, Org Health Checks</div>
         </div>
 
+        <!-- Skill Category 2
+             CUSTOMIZE: Edit categories and skills -->
         <div class="skill-box">
           <h4 style="margin-top:0;margin-bottom:0.5rem">Automation & Configuration</h4>
           <div>Flows (Screen & Auto), Workflow Rules, Validation Rules, Record Types, Lightning Page Layouts, Duplicate Management</div>
         </div>
 
+        <!-- Skill Category 3
+             CUSTOMIZE: Edit categories and skills -->
         <div class="skill-box">
           <h4 style="margin-top:0;margin-bottom:0.5rem">Data & Integrations</h4>
           <div>Data Loader, Data Import Wizard, Workbench, Salesforce Inspector, Data Migration & Governance</div>
         </div>
 
+        <!-- Skill Category 4
+             CUSTOMIZE: Edit categories and skills -->
         <div class="skill-box">
           <h4 style="margin-top:0;margin-bottom:0.5rem">Reporting & Deployment</h4>
           <div>Reports & Dashboards, Custom Report Types, Change Sets, UAT coordination, Stakeholder training</div>
         </div>
       </div>
 
+      <!-- Tools section -->
       <div style="margin-top:1rem" class="container">
         <div style="text-align:center;color:var(--muted);font-weight:600;margin-bottom:0.6rem">Tools & technologies</div>
+        
+        <!-- Tools chips
+             CUSTOMIZE: Add or remove tools based on your expertise -->
         <div class="tools" style="justify-content:center">
           <span class="tool">Salesforce</span>
           <span class="tool">Sales Cloud</span>
@@ -361,10 +646,12 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
+    <!-- Certifications Section -->
     <section id="certifications" class="container">
       <h2 class="section-title">Certifications</h2>
       <div style="max-width:640px;margin:0.6rem auto;text-align:center">
+        <!-- Certification 1
+             CUSTOMIZE: Add your actual certifications -->
         <div style="display:inline-block;background:var(--card);padding:1rem 1.25rem;border-radius:10px;box-shadow:var(--shadow)">
           <div style="font-weight:700;color:var(--primary);margin-bottom:0.25rem"><i class="fa-brands fa-salesforce" style="margin-right:0.6rem"></i>Salesforce Certified Administrator</div>
           <div style="color:var(--muted)">Credential demonstrates knowledge of core admin tasks and platform features.</div>
@@ -372,11 +659,12 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact Section -->
     <section id="contact" class="container">
       <h2 class="section-title">Get in touch</h2>
+      
+      <!-- Contact intro text
+           CUSTOMIZE: Edit to reflect your job search status -->
       <p class="lead-center">I'm open to new opportunities and consulting work. If you'd like to discuss how I can help improve Salesforce processes or support implementations, please reach out.</p>
 
-      <div class="contact-grid" role="contentinfo" aria-label="Contact information">
-        <div class="contact-item">
-         
+      
