@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samiksha Gujar — Salesforce Administrator</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="description" content="Samiksha Gujar — Salesforce Administrator. Sales Cloud, Service Cloud, Flows, Data Management, Reports & Dashboards." />
+
+  <style>
+    :root{
+      --primary:#063b6e;
+      --accent:#007bff;
+      --muted:#6c757d;
+      --bg:#f4f6f8;
+      --card:#fff;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 10px 30px rgba(11,22,50,0.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#eef3f8);
+      color:#122028;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      font-size:16px;
+    }
+
+    .container{max-width:1100px;margin:0 auto;padding:1.25rem}
+
+    /* Header */
+    header.site-header{
+      background:var(--primary);
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow:0 6px 20px rgba(6,59,110,0.12);
+    }
+    header .container{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.9rem 1.25rem;
+    }
+    .brand{font-weight:700;font-size:1.15rem;letter-spacing:0.2px}
+    nav.main-nav ul{display:flex;gap:0.25rem;list-style:none;margin:0;padding:0}
+    nav.main-nav a{color:rgba(255,255,255,0.95);padding:0.5rem 0.9rem;border-radius:6px;text-decoration:none;display:inline-block}
+    nav.main-nav a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+
+    /* Hero */
+    .hero{
+      padding:3.25rem 0;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:2rem;
+      align-items:center;
+    }
+    .intro h1{font-size:2.1rem;margin:0 0 0.35rem;color:var(--primary)}
+    .intro p.lead{color:#243142;margin-bottom:1rem;font-size:1.05rem}
+    .meta-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem}
+    .chip{background:var(--card);padding:0.45rem 0.6rem;border-radius:999px;font-weight:600;color:var(--primary);box-shadow:var(--shadow);font-size:0.88rem}
+
+    .hero-ctas{margin-top:1rem;display:flex;gap:0.6rem;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 0.9rem;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600;text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,123,255,0.12)
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(15,76,146,0.08);color:var(--primary);font-weight:600}
+
+    /* Profile card/photo */
+    .profile-card{
+      display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82));
+      padding:1.15rem;border-radius:14px;box-shadow:var(--shadow);
+    }
+    .photo-frame{
+      width:190px;height:190px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 18px 40px rgba(6,59,110,0.12);display:block;
+      background:linear-gradient(135deg, rgba(0,123,255,0.06), rgba(6,59,110,0.04));
+    }
+    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(0.98) brightness(0.99)}
+    .profile-name{font-weight:700;color:var(--primary)}
+    .profile-title{font-weight:600;color:var(--muted);font-size:0.92rem}
+
+    /* Main sections */
+    main section{
+      padding:2.5rem 0;
+    }
+    h2.section-title{
+      text-align:center;font-size:1.6rem;margin-bottom:1rem;color:var(--primary)
+    }
+    .lead-center{max-width:880px;margin:0.5rem auto 0;color:#243142;text-align:center}
+
+    /* Experience / timeline */
+    .timeline{display:flex;flex-direction:column;gap:1rem;max-width:980px;margin:1.25rem auto}
+    .job{
+      background:var(--card);padding:1.15rem;border-radius:10px;box-shadow:var(--shadow);border-left:4px solid var(--primary)
+    }
+    .job .row{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap}
+    .job h3{margin:0;font-size:1.02rem}
+    .company{color:var(--accent);font-weight:600;margin-bottom:0.5rem}
+    .job ul{margin:0.65rem 0 0 1.1rem;padding:0}
+    .job li{margin-bottom:0.6rem;color:#213042}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .project-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+    .project-card h4{margin:0 0 0.5rem;color:var(--primary)}
+
+    /* Skills & tools chips */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .skill-box{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+    .tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.6rem}
+    .tool{background:#f1f6fc;padding:0.35rem 0.6rem;border-radius:999px;font-size:0.88rem;color:var(--primary);font-weight:600}
+
+    /* Contact */
+    .contact-grid{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+    .contact-item{background:var(--card);padding:0.8rem 1rem;border-radius:10px;display:flex;align-items:center;gap:0.5rem;box-shadow:var(--shadow)}
+    .contact-item a{color:var(--primary);font-weight:600;text-decoration:none}
+
+    footer{padding:1.2rem 0;text-align:center;background:transparent;color:var(--muted);font-size:0.95rem;margin-top:2rem}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:740px){
+      nav.main-nav{display:none}
+      .hero-grid{grid-template-columns:1fr;gap:1rem}
+      .photo-frame{width:160px;height:160px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="brand">Samiksha Gujar</div>
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="intro">
+        <h1>Samiksha Gujar</h1>
+        <p class="lead">Salesforce Administrator focused on Sales Cloud & Service Cloud, automation using Flows, and robust data integrity. I design secure, scalable Salesforce solutions that help teams work smarter — not harder.</p>
+
+        <div class="meta-chips" aria-hidden="true">
+          <div class="chip">Salesforce Admin</div>
+          <div class="chip">Sales Cloud</div>
+          <div class="chip">Service Cloud</div>
+          <div class="chip">Reports & Dashboards</div>
+        </div>
+
+        <div class="hero-ctas">
+          <!-- If you add resume.pdf to the same folder, this will download it -->
+          <a class="btn" href="resume.pdf" download aria-label="Download resume (PDF)"><i class="fa-solid fa-download"></i> Download Resume</a>
+          <a class="btn secondary" href="#contact" aria-label="Contact Samiksha"><i class="fa-solid fa-envelope"></i> Contact</a>
+          <!-- UPDATE: replace '#' with your LinkedIn and Trailhead URLs -->
+          <a class="btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-salesforce"></i> Trailhead</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-labelledby="profile-name">
+        <div class="photo-frame" title="Profile photo">
+          <!-- Place the attached image in the same folder and name it exactly image.png -->
+          <img src="image.png" alt="Profile photo of Samiksha Gujar">
+        </div>
+        <div>
+          <div id="profile-name" class="profile-name">Samiksha Gujar</div>
+          <div class="profile-title">Salesforce Administrator — Certified Administrator</div>
+        </div>
+        <div style="width:100%">
+          <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
+            <span style="font-size:0.88rem;color:var(--muted)">Open to opportunities</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="container">
+      <h2 class="section-title">About</h2>
+      <p class="lead-center">I am a focused Salesforce Administrator with hands-on experience across Sales Cloud and Service Cloud implementations. I specialize in building flows and automation to reduce manual effort, designing reports and dashboards that provide clear operational visibility, and ensuring data governance across orgs. I collaborate closely with stakeholders and follow structured deployment practices (Change Sets / UAT) to deliver reliable, maintainable solutions.</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="timeline">
+        <article class="job" aria-labelledby="job1">
+          <div class="row">
+            <h3 id="job1">Salesforce Administrator — Kriit Technologies USA LLC (Client: Merchant Advance Funding)</h3>
+            <div style="color:var(--muted);font-style:italic">May 2024 – Aug 2025</div>
+          </div>
+          <div class="company">Funding & underwriting workflow automation</div>
+          <ul>
+            <li>Worked with stakeholders through Azure DevOps to triage enhancements, bug fixes and support tickets and translate requirements into Salesforce changes.</li>
+            <li>Customized Lightning: objects, record types, page layouts and validation rules tailored for funding workflows.</li>
+            <li>Built audit-friendly reports and dashboards to support compliance, KPIs and leadership reporting needs.</li>
+            <li>Configured permission sets, IP restrictions and validated Enhanced Audit Trail to strengthen governance and traceability.</li>
+          </ul>
+        </article>
+
+        <article class="job" aria-labelledby="job2">
+          <div class="row">
+            <h3 id="job2">Salesforce Administrator — Kinfotech (Client: Travel Management)</h3>
+            <div style="color:var(--muted);font-style:italic">Dec 2023 – Apr 2024</div>
+          </div>
+          <div class="company">Payments & refunds automation</div>
+          <ul>
+            <li>Designed and implemented a Create Refund feature integrated with a third‑party payment processor and duplicate-prevention logic.</li>
+            <li>Developed guided Screen Flows to standardize refund processing and reduce manual errors.</li>
+            <li>Managed deployments using Change Sets, coordinated UAT cycles and conducted user training.</li>
+            <li>Performed data operations using Data Loader, Workbench and Salesforce Inspector to maintain data integrity.</li>
+          </ul>
+        </article>
+
+        <article class="job" aria-labelledby="job3">
+          <div class="row">
+            <h3 id="job3">Salesforce Administrator — Kinfotech (Client: Smart Home Appliances)</h3>
+            <div style="color:var(--muted);font-style:italic">June 2023 – Dec 2023</div>
+          </div>
+          <div class="company">Service Cloud & Field Service setup</div>
+          <ul>
+            <li>Implemented Service Cloud features for Case Management (Email‑to‑Case / Web‑to‑Case) to centralize support routing.</li>
+            <li>Configured Asset and Entitlement Management to track warranties and service coverage.</li>
+            <li>Integrated Field Service capabilities to schedule technicians and capture real‑time service updates.</li>
+            <li>Created reports and dashboards to monitor SLA compliance and customer satisfaction indicators.</li>
+          </ul>
+        </article>
+
+        <article class="job" aria-labelledby="job4">
+          <div class="row">
+            <h3 id="job4">Salesforce Administrator — Kinfotech (Client: UrbanNest Realty)</h3>
+            <div style="color:var(--muted);font-style:italic">Aug 2022 – May 2023</div>
+          </div>
+          <div class="company">Real estate operations automation</div>
+          <ul>
+            <li>Customized Salesforce to track Properties, Leases and Tenants with tailored objects and page layouts.</li>
+            <li>Automated lease renewals, rent reminders and maintenance escalations using Flows to reduce manual follow-up.</li>
+            <li>Built dashboards to monitor occupancy, lease expirations and rental revenue trends for operational decision-making.</li>
+          </ul>
+        </article>
+
+        <article class="job" aria-labelledby="job5">
+          <div class="row">
+            <h3 id="job5">Salesforce Administrator — Kinfotech (Client: The Pipeline Group)</h3>
+            <div style="color:var(--muted);font-style:italic">Jul 2020 – Aug 2022</div>
+          </div>
+          <div class="company">Sales process & lead management</div>
+          <ul>
+            <li>Supported CRM optimization focused on lead management and improving sales team productivity.</li>
+            <li>Managed user access: roles, profiles and permission sets; created custom objects where needed.</li>
+            <li>Configured lead assignment rules to ensure accurate distribution to sales representatives.</li>
+            <li>Developed reports and dashboards to visualize lead conversion rates and pipeline performance.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS / HIGHLIGHTS -->
+    <section id="projects" class="container">
+      <h2 class="section-title">Projects & Highlights</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h4>Refund Automation (Travel Management)</h4>
+          <p>End‑to‑end solution including third‑party payment integration and guided Screen Flow to prevent duplicate refunds and reduce manual errors during customer refunds.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Service Cloud Implementation (Smart Home Appliances)</h4>
+          <p>Designed case lifecycle, automated email capture, asset tracking and field service scheduling to improve service resolution and visibility for support teams.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Funding Workflow Optimization (MAF)</h4>
+          <p>Customized Lightning architecture and reports for funding processes, implemented governance controls including permission sets and Enhanced Audit Trail validation.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Real Estate Operations Automation (UrbanNest)</h4>
+          <p>Automated lease renewals and maintenance workflows using Flows and created dashboards to monitor occupancy and revenue trends.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TOOLS -->
+    <section id="skills" class="container">
+      <h2 class="section-title">Core Competencies & Tools</h2>
+      <div class="skills-grid" style="margin-top:1rem">
+        <div class="skill-box">
+          <h4 style="margin-top:0;margin-bottom:0.5rem">Administration & Security</h4>
+          <div>Profiles, Roles, Permission Sets, OWD, Sharing Rules, IP Restrictions, Enhanced Audit Trail, Org Health Checks</div>
+        </div>
+
+        <div class="skill-box">
+          <h4 style="margin-top:0;margin-bottom:0.5rem">Automation & Configuration</h4>
+          <div>Flows (Screen & Auto), Workflow Rules, Validation Rules, Record Types, Lightning Page Layouts, Duplicate Management</div>
+        </div>
+
+        <div class="skill-box">
+          <h4 style="margin-top:0;margin-bottom:0.5rem">Data & Integrations</h4>
+          <div>Data Loader, Data Import Wizard, Workbench, Salesforce Inspector, Data Migration & Governance</div>
+        </div>
+
+        <div class="skill-box">
+          <h4 style="margin-top:0;margin-bottom:0.5rem">Reporting & Deployment</h4>
+          <div>Reports & Dashboards, Custom Report Types, Change Sets, UAT coordination, Stakeholder training</div>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem" class="container">
+        <div style="text-align:center;color:var(--muted);font-weight:600;margin-bottom:0.6rem">Tools & technologies</div>
+        <div class="tools" style="justify-content:center">
+          <span class="tool">Salesforce</span>
+          <span class="tool">Sales Cloud</span>
+          <span class="tool">Service Cloud</span>
+          <span class="tool">Field Service</span>
+          <span class="tool">Flows</span>
+          <span class="tool">Data Loader</span>
+          <span class="tool">Workbench</span>
+          <span class="tool">Azure DevOps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div style="max-width:640px;margin:0.6rem auto;text-align:center">
+        <div style="display:inline-block;background:var(--card);padding:1rem 1.25rem;border-radius:10px;box-shadow:var(--shadow)">
+          <div style="font-weight:700;color:var(--primary);margin-bottom:0.25rem"><i class="fa-brands fa-salesforce" style="margin-right:0.6rem"></i>Salesforce Certified Administrator</div>
+          <div style="color:var(--muted)">Credential demonstrates knowledge of core admin tasks and platform features.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2 class="section-title">Get in touch</h2>
+      <p class="lead-center">I'm open to new opportunities and consulting work. If you'd like to discuss how I can help improve Salesforce processes or support implementations, please reach out.</p>
+
+      <div class="contact-grid" role="contentinfo" aria-label="Contact information">
+        <div class="contact-item">
+         
